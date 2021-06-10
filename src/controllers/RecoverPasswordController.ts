@@ -1,13 +1,20 @@
 import { Request, Response } from 'express';
-import { getCustomRepository } from 'typeorm';
+// import { getCustomRepository } from 'typeorm'; //DEV
+import typeorm from 'typeorm';
+const { getCustomRepository }=typeorm;
 import { resolve } from 'path';
-import { verify } from 'jsonwebtoken';
-import { hash } from 'bcryptjs';
+// import { verify } from 'jsonwebtoken'; //DEV
+import jsonwebtoken from 'jsonwebtoken';
+// import { hash } from 'bcryptjs'; //DEV
+import bcryptjs  from 'bcryptjs';
 
 import { AppError } from '../errors/AppError';
 import UsersRepository from '../repositories/UsersRepository';
 import PasswordRecoveryService from '../services/PasswordRecoveryService';
 import MailService from '../services/MailService';
+
+const { verify } = jsonwebtoken;
+const { hash } = bcryptjs;
 
 interface TokenPayload {
   iat: number;

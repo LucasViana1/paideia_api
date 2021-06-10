@@ -1,11 +1,17 @@
-import { getCustomRepository } from 'typeorm';
-import { compare } from 'bcryptjs';
-import { sign } from 'jsonwebtoken';
+// import { getCustomRepository } from 'typeorm'; //DEV
+import typeorm from 'typeorm';
+const { getCustomRepository }=typeorm;
+// import { compare } from 'bcryptjs'; //DEV
+import bcryptjs from 'bcryptjs'; //DEV
+// import { sign } from 'jsonwebtoken'; // DEV
+import jsonwebtoken from 'jsonwebtoken';
 import { AppError } from '../errors/AppError';
 
 import User from '../models/User';
 import UsersRepository from '../repositories/UsersRepository';
 
+const { compare } = bcryptjs;
+const { sign } = jsonwebtoken;
 interface IRequest {
   email: string;
   password: string;

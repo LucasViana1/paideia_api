@@ -1,4 +1,5 @@
-import { Router } from 'express';
+// import { Router } from 'express'; //DEV
+import express from 'express';
 import RecoverPasswordController from './controllers/RecoverPasswordController';
 import SessionController from './controllers/SessionController';
 import SubscribersCandidatesController from './controllers/SubscribersCandidatesController';
@@ -7,6 +8,8 @@ import SubscribersFilesController from './controllers/SubscribersFilesController
 import SubscribersSocioeconomicController from './controllers/SubscribersSocioeconomicController';
 import UsersController from './controllers/UsersController';
 import ensureAuthenticated from './middlewares/ensureAuthenticated';
+
+const { Router } = express;
 
 const router = Router();
 

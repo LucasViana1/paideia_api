@@ -1,11 +1,16 @@
 import { Request, Response } from 'express';
-import { getCustomRepository } from 'typeorm';
-import { hash } from 'bcryptjs';
+// import { getCustomRepository } from 'typeorm'; //DEV
+import typeorm from 'typeorm';
+const { getCustomRepository }=typeorm;
+// import { hash } from 'bcryptjs'; //DEV
+import bcryptjs  from 'bcryptjs';
+
 import { resolve } from 'path';
 import { AppError } from '../errors/AppError';
 import UsersRepository from '../repositories/UsersRepository';
 import MailService from '../services/MailService';
 
+const { hash } = bcryptjs;
 class UsersController {
   async store(request: Request, response: Response) {
     const { name, lastname, email, password } = request.body;

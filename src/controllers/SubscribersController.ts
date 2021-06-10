@@ -1,5 +1,7 @@
 import { Request, Response } from 'express';
-import { getCustomRepository } from 'typeorm';
+// import { getCustomRepository } from 'typeorm'; //DEV
+import typeorm from 'typeorm';
+const { getCustomRepository }=typeorm;
 import { AppError } from '../errors/AppError';
 import CandidatesRepository from '../repositories/SubscribersCandidatesRepository';
 import UsersRepository from '../repositories/UsersRepository';

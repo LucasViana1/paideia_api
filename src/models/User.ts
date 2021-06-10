@@ -1,6 +1,8 @@
-import { Column, CreateDateColumn, Entity, PrimaryColumn } from 'typeorm';
+// import { Column, CreateDateColumn, Entity, PrimaryColumn } from 'typeorm'; // DEV
+import typeorm from 'typeorm';
 import { v4 as uuid } from 'uuid';
 
+const { Column, CreateDateColumn, Entity, PrimaryColumn } = typeorm;
 @Entity('users')
 class User {
   @PrimaryColumn()

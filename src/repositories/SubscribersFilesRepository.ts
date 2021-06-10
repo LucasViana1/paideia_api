@@ -1,4 +1,6 @@
-import { EntityRepository, Repository } from 'typeorm';
+// import { EntityRepository, Repository } from 'typeorm'; // DEV
+import typeorm from 'typeorm';
+const { EntityRepository, Repository } = typeorm;
 import File from '../models/File';
 
 @EntityRepository(File)

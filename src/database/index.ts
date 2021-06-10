@@ -1,4 +1,6 @@
-import { Connection, createConnection, getConnectionOptions } from 'typeorm';
+// import { Connection, createConnection, getConnectionOptions } from 'typeorm'; // DEV
+import typeorm, { Connection } from 'typeorm';
+const {createConnection, getConnectionOptions} = typeorm;
 
 export default async (): Promise<Connection> => {
   const defaultOptions = await getConnectionOptions(); // ormconfig infos

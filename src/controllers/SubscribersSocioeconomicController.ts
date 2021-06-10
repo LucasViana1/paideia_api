@@ -1,5 +1,7 @@
 import { Request, Response } from 'express';
-import { getCustomRepository } from 'typeorm';
+// import { getCustomRepository } from 'typeorm'; //DEV
+import typeorm from 'typeorm';
+const { getCustomRepository }=typeorm;
 import { resolve } from 'path';
 
 import SocioeconomicRepository from '../repositories/SubscribersSocioeconomicRepository';

@@ -1,13 +1,23 @@
-import {
+// import {
+//   Column,
+//   CreateDateColumn,
+//   Entity,
+//   JoinColumn,
+//   ManyToOne,
+//   PrimaryColumn,
+// } from 'typeorm'; //DEV
+import typeorm from 'typeorm';
+import { v4 as uuid } from 'uuid';
+import User from './User';
+
+const {
   Column,
   CreateDateColumn,
   Entity,
   JoinColumn,
   ManyToOne,
   PrimaryColumn,
-} from 'typeorm';
-import { v4 as uuid } from 'uuid';
-import User from './User';
+} = typeorm;
 
 @Entity('files')
 class File {

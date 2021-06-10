@@ -1,14 +1,23 @@
-import {
+// import {
+//   Column,
+//   CreateDateColumn,
+//   Entity,
+//   JoinColumn,
+//   OneToOne,
+//   PrimaryColumn,
+// } from 'typeorm'; //DEV
+import typeorm from 'typeorm';
+import { v4 as uuid } from 'uuid';
+import User from './User';
+
+const {
   Column,
   CreateDateColumn,
   Entity,
   JoinColumn,
   OneToOne,
   PrimaryColumn,
-} from 'typeorm';
-import { v4 as uuid } from 'uuid';
-import User from './User';
-
+} = typeorm;
 @Entity('socioeconomic')
 class Candidates {
   @PrimaryColumn()
